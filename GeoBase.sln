@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoIp", "GeoIpBase\GeoIp.csproj", "{81FC59B5-7C44-4BD4-A1D7-AB182A2C1B4C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLI", "CLI\CLI.csproj", "{88681BC1-B86B-42BD-B845-1D982F891F9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoBaseWeb", "GeoBaseWeb\GeoBaseWeb.csproj", "{7F8E335B-A091-4DA0-9D9D-24DCA9FEA32F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81FC59B5-7C44-4BD4-A1D7-AB182A2C1B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81FC59B5-7C44-4BD4-A1D7-AB182A2C1B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81FC59B5-7C44-4BD4-A1D7-AB182A2C1B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81FC59B5-7C44-4BD4-A1D7-AB182A2C1B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88681BC1-B86B-42BD-B845-1D982F891F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88681BC1-B86B-42BD-B845-1D982F891F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88681BC1-B86B-42BD-B845-1D982F891F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88681BC1-B86B-42BD-B845-1D982F891F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F8E335B-A091-4DA0-9D9D-24DCA9FEA32F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F8E335B-A091-4DA0-9D9D-24DCA9FEA32F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F8E335B-A091-4DA0-9D9D-24DCA9FEA32F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F8E335B-A091-4DA0-9D9D-24DCA9FEA32F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {219EA3E1-8CF4-4935-961C-45C64CD7BD92}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,46 @@
+﻿@page
+
+<link rel="stylesheet" href="css/index.css">
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/doT.min.js"></script>
+<script src="js/index.js"></script>
+
+<header class="header">
+    <div class="header__content">
+        <div class="header__description-item grid-col-1">
+            <h1>IP Address Geo Location Database</h1>
+        </div>
+        <div class="header__description-item grid-col-2">
+            Find geographic location by IP address or city
+        </div>
+        <div class="search__container grid-row-2 grid-col-span-2">
+            <input type="text" id="txt-search" placeholder="IP address or city name" class="search__input" />
+        </div>
+    </div>
+</header>
+
+<main class="main">
+    <div id="div-result" class="result_container">
+    </div>
+</main>
+
+<script id="template-response" type="text/html">
+    {{~ it.locations :l}}
+        <div class="location_container">
+            <dl >
+                <dt>Country</dt>
+                <dd>{{=l.country}}</dd>
+                <dt>Region</dt>
+                <dd>{{=l.region}}</dd>
+                <dt>City</dt>
+                <dd>{{=l.city}}</dd>
+                <dt>Postal</dt>
+                <dd>{{=l.postal}}</dd>
+                <dt>Organization</dt>
+                <dd>{{=l.organization}}</dd>
+                <dt>Location</dt>
+                <dd>{{=l.latitude}} {{=l.longitude}}</dd>
+            </dl>
+        </div>
+    {{~}}
+</script>
