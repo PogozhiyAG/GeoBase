@@ -22,8 +22,8 @@
     $txtSearch.change(doSearch);
     $txtSearch.keyup(doSearch);
 
-    $('.search-example').click(e => {
-        $txtSearch.val($(e.target).text());
+    $('.search-example').click(function() {
+        $txtSearch.val($(this).text());
         doSearch();
     });
 });
