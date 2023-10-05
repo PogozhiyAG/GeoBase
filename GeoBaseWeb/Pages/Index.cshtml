@@ -1,4 +1,18 @@
 ﻿@page
+@{
+    var examples = new string[] {
+        "cit_Ama",
+        "cit_Abu",
+        "cit_Axu",
+        "cit_I",
+        "cit_En",
+        "cit_Ito",
+        "cit_Ola",
+        "cit_Ul",
+        "cit_Ydu"
+    };
+    var getExample = () => examples[Random.Shared.Next(examples.Length)];
+}
 
 <link rel="stylesheet" href="css/index.css">
 <script src="js/lib/jquery.min.js"></script>
@@ -11,9 +25,10 @@
             <h1>IP Address Geo Location Database</h1>
         </div>
         <div class="header__description-item grid-col-2">
-            Find geographic location by IP address or city
+            Find geographic location by IP address or city.
         </div>
         <div class="search__container grid-row-2 grid-col-span-2">
+            <div>For example <span class="search-example">@getExample()</span> or <span class="search-example">@getExample()</span></div>
             <input type="text" id="txt-search" placeholder="IP address or city name" class="search__input" />
         </div>
     </div>
@@ -25,22 +40,28 @@
 </main>
 
 <script id="template-response" type="text/html">
-    {{~ it.locations :l}}
-        <div class="location_container">
-            <dl >
-                <dt>Country</dt>
-                <dd>{{=l.country}}</dd>
-                <dt>Region</dt>
-                <dd>{{=l.region}}</dd>
-                <dt>City</dt>
-                <dd>{{=l.city}}</dd>
-                <dt>Postal</dt>
-                <dd>{{=l.postal}}</dd>
-                <dt>Organization</dt>
-                <dd>{{=l.organization}}</dd>
-                <dt>Location</dt>
-                <dd>{{=l.latitude}} {{=l.longitude}}</dd>
-            </dl>
-        </div>
-    {{~}}
+    <table class="results__table">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Region</th>
+                <th>City</th>
+                <th>Postal</th>
+                <th>Organization</th>
+                <th class="results__numeric-cell">Location/Lat</th>
+                <th class="results__numeric-cell">Location/Lon</th>
+            </tr>
+        </thead>
+        {{~ it.locations :l}}
+            <tr>
+                <td>{{=l.country}}</td>
+                <td>{{=l.region}}</td>
+                <td>{{=l.city}}</td>
+                <td>{{=l.postal}}</td>
+                <td>{{=l.organization}}</td>
+                <td class="results__numeric-cell">{{=l.latitude.toFixed(4)}}</td>
+                <td class="results__numeric-cell">{{=l.longitude.toFixed(4)}}</td>
+            </tr>
+        {{~}}
+    </table>
 </script>

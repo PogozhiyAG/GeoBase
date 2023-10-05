@@ -7,7 +7,7 @@
 .header {
     background-color: #145233;
     color: #fff;
-    padding: 50px 200px;
+    padding: 50px 50px;
 }
 
 .header__content {
@@ -46,6 +46,7 @@
     color: #fff;
     border-radius: 10px;
     border: 1px solid #fff;
+    margin-top: 12px;
 }
 
 .grid-col-1 {
@@ -65,24 +66,24 @@
 }
 
 .result_container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     padding: 40px;
 }
 
-.location_container {
-    padding: 12px;
-    min-width: 400px;
-    background-color: #eee;
+.results__table {
+    width: 100%;
 }
 
-    .location_container dl {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        column-gap: 15px;
-    }
+.results__table th {
+    padding-bottom: 12px;
+    text-align: left;
+}
 
-    .location_container dt {
-        font-weight: 600;
-    }
+.results__numeric-cell{
+    text-align: right !important;
+}
+
+.search-example {
+    cursor: pointer;
+    border-bottom: 1px dotted;
+    padding: 1;
+}
