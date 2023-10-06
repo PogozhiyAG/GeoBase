@@ -22,6 +22,10 @@
     text-transform: uppercase;
 }
 
+.header a {
+    color: inherit;
+}
+
 .header__description-container {
     display: grid;
     max-width: 500px;
