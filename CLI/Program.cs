@@ -9,20 +9,14 @@ namespace CLI
 {
     unsafe class Program
     {
-        static GeoIpDatabase service;
+        static GeoIpDatabase? service;
 
 
         static void Main(string[] args)
         {
             Init();
-
             Menu();
         }
-
-
-
-
-
 
 
         private static void Init()
@@ -33,7 +27,6 @@ namespace CLI
             Console.WriteLine("{0} за {1}", service.GetRecordCount(), sw.Elapsed);
             Console.WriteLine();
         }
-
 
         private static void Menu()
         {
@@ -76,13 +69,13 @@ namespace CLI
             Random random = new Random(DateTime.Now.Millisecond);
 
             sw.Restart();
-            Location? p_location = service.FindLocationByIpAddress((uint)random.Next(500000000));
+            Location? p_location = service!.FindLocationByIpAddress((uint)random.Next(500000000));
             sw.Stop();
             Console.WriteLine("№1 Поиск по IP {0}", sw.Elapsed);
 
 
             sw.Restart();
-            p_location = service.FindLocationByIpAddress((uint)random.Next(500000000));
+            p_location = service!.FindLocationByIpAddress((uint)random.Next(500000000));
             sw.Stop();
             Console.WriteLine("№2 Поиск по IP {0}", sw.Elapsed);
 
@@ -206,7 +199,7 @@ namespace CLI
 
                 if (IPAddress.TryParse(input, out IPAddress? ip_address))
                 {
-                    Location? p_location = service.FindLocationByIpAddress(ip_address.ToInteger());
+                    Location? p_location = service!.FindLocationByIpAddress(ip_address.ToInteger());
                     if (p_location.HasValue)
                     {
                         Location.Managed managedLocation = p_location.Value.GetManaged();
@@ -249,7 +242,7 @@ namespace CLI
                 int i = 0;
                 int count = 200;
 
-                service.FindLocationsByCity(input, StringSearchMode.Exact, location =>
+                service!.FindLocationsByCity(input, StringSearchMode.Exact, location =>
                 {
                     Console.WriteLine($"№{i++}:");
                     Console.WriteLine(location.GetManaged());
