@@ -16,15 +16,14 @@ public class Search
     {
         string cityName = "cit_Epimyj";
 
-        Location foundLocation = default;
+        var searchResults = new List<Location.Managed>();
         dataBase.FindLocationsByCity(cityName, StringSearchMode.Exact, location =>
         {
-            foundLocation = location;
-            return false;
+            searchResults.Add(location.GetManaged());
+            return true;
         });
 
-        var foundLocationManaged = foundLocation.GetManaged();
-        Assert.NotNull(foundLocationManaged);
-        Assert.Equal(cityName, foundLocationManaged.City);
+        Assert.True(searchResults.Any());
+        Assert.True(searchResults.TrueForAll(l => l.City == cityName));
     }
 }
