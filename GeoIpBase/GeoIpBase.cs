@@ -23,15 +23,11 @@ public unsafe class GeoIpDatabase
     /// <summary>
     /// Database in binary format
     /// </summary>
-    private byte[]? rawData;
+    private byte[] rawData;
 
-    /// <summary>
-    /// Load data from from file
-    /// </summary>
-    /// <param name="fileName">database file name</param>
-    public void LoadFromFile(string fileName)
+    public GeoIpDatabase(byte[] rawData)
     {
-        rawData = File.ReadAllBytes(fileName);
+        this.rawData = rawData;
     }
 
     /// <summary>

@@ -9,7 +9,7 @@ namespace CLI
 {
     unsafe class Program
     {
-        static GeoIpDatabase service = new GeoIpDatabase();
+        static GeoIpDatabase service;
 
 
         static void Main(string[] args)
@@ -28,7 +28,7 @@ namespace CLI
         private static void Init()
         {
             Stopwatch sw = Stopwatch.StartNew();
-            service.LoadFromFile("geobase.dat");
+            service = new GeoIpDatabase(File.ReadAllBytes("geobase.dat"));
             sw.Stop();
             Console.WriteLine("{0} за {1}", service.GetRecordCount(), sw.Elapsed);
             Console.WriteLine();

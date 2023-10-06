@@ -2,6 +2,7 @@
     const $divResult = $('#div-result');
     const $txtSearch = $('#txt-search');
     const $templateResponse = $('#template-response');
+    const $searchExamples = $('.search-example');
 
     const renderResponseTemplate = doT.compile($templateResponse.html());
 
@@ -22,7 +23,7 @@
     $txtSearch.change(doSearch);
     $txtSearch.keyup(doSearch);
 
-    $('.search-example').click(function() {
+    $searchExamples.click(function() {
         $txtSearch.val($(this).text());
         doSearch();
     });

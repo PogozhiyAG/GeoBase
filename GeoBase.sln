@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLI", "CLI\CLI.csproj", "{8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoBaseWeb", "GeoBaseWeb\GeoBaseWeb.csproj", "{7F8E335B-A091-4DA0-9D9D-24DCA9FEA32F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoIpMVC", "GeoIpMVC\GeoIpMVC.csproj", "{E1434C2F-3986-4498-96AE-7CB4E9F248B7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{7F8E335B-A091-4DA0-9D9D-24DCA9FEA32F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F8E335B-A091-4DA0-9D9D-24DCA9FEA32F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F8E335B-A091-4DA0-9D9D-24DCA9FEA32F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1434C2F-3986-4498-96AE-7CB4E9F248B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1434C2F-3986-4498-96AE-7CB4E9F248B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1434C2F-3986-4498-96AE-7CB4E9F248B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1434C2F-3986-4498-96AE-7CB4E9F248B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
