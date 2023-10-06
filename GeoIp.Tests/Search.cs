@@ -15,8 +15,8 @@ public class Search
     public void Search_by_city_name_exact()
     {
         string cityName = "cit_Epimyj";
-
         var searchResults = new List<Location.Managed>();
+
         dataBase.FindLocationsByCity(cityName, StringSearchMode.Exact, location =>
         {
             searchResults.Add(location.GetManaged());
