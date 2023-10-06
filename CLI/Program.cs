@@ -284,7 +284,7 @@ namespace CLI
                 int i = 0;
                 int count = 200;
 
-                service.FindLocationsByCity(input, StringSearchMode.Starts, location =>
+                service!.FindLocationsByCity(input, StringSearchMode.Starts, location =>
                 {
                     Console.WriteLine($"№{i++}:");
                     Console.WriteLine(location.GetManaged());

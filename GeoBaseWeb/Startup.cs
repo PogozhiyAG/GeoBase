@@ -56,7 +56,7 @@ namespace GeoBaseWeb
 
         public GeoIpDatabase CreateGeoIpService()
         {
-            var data = File.ReadAllBytes(Configuration["GeoIP:DataFileName"]);
+            var data = File.ReadAllBytes(Configuration["GeoIP:DataFileName"]!);
             var result = new GeoIpDatabase(data);
             return result;
         }
