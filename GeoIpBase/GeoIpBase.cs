@@ -142,7 +142,7 @@ public unsafe class GeoIpDatabase
     /// <param name="searchMode">Search mode</param>
     /// <param name="onFoundLocationDelegate">The delegate that will be called for each location found; If this delegate returns false, enumeration of the results will be finished</param>
     /// <exception cref="ArgumentException"></exception>
-    public void FindLocationsByCity(string city, StringSearchMode searchMode, Func<Location, bool> onFoundLocationDelegate)
+    public void FindLocationsByCity(string city, StringSearchMode searchMode, Func<Location.Managed, bool> onFoundLocationDelegate)
     {
         int stringLength = searchMode switch
         {
@@ -167,9 +167,9 @@ public unsafe class GeoIpDatabase
 
                 while (from <= to)
                 {
-                    var currentLocation = *(Location*)((byte*)location + *(locationCityIndex + from));
+                    var currentLocation = (Location*)((byte*)location + *(locationCityIndex + from));
                     from++;
-                    if (!onFoundLocationDelegate(currentLocation))
+                    if (!onFoundLocationDelegate(currentLocation->GetManaged()))
                     {
                         break;
                     }

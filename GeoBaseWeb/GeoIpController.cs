@@ -44,7 +44,7 @@ namespace GeoBaseWeb
                 FindResponse response = FindResponse.OK();
                 dataBase.FindLocationsByCity(searchString, StringSearchMode.Starts, location =>
                 {
-                    response.Locations.Add(location.GetManaged());
+                    response.Locations.Add(location);
                     return i++ < count;
                 });
 

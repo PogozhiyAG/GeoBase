@@ -19,7 +19,7 @@ public class Search
 
         dataBase.FindLocationsByCity(cityName, StringSearchMode.Exact, location =>
         {
-            searchResults.Add(location.GetManaged());
+            searchResults.Add(location);
             return true;
         });
 

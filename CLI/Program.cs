@@ -138,7 +138,7 @@ namespace CLI
             byte[] s_city = new ASCIIEncoding().GetBytes(s1);
 
             sw.Restart();
-            Location foundLocation = default;
+            Location.Managed foundLocation = default;
             service.FindLocationsByCity(s1, StringSearchMode.Exact, location =>
             {
                 foundLocation = location;
@@ -173,7 +173,7 @@ namespace CLI
             Console.WriteLine($"Поиск по городу equals {repeatCityLower} раз {sw.Elapsed}");
 
 
-            Console.WriteLine(foundLocation.GetManaged());
+            Console.WriteLine(foundLocation);
 
 
         }
@@ -245,7 +245,7 @@ namespace CLI
                 service!.FindLocationsByCity(input, StringSearchMode.Exact, location =>
                 {
                     Console.WriteLine($"№{i++}:");
-                    Console.WriteLine(location.GetManaged());
+                    Console.WriteLine(location);
                     Console.WriteLine();
                     return i < count;
                 });
@@ -287,7 +287,7 @@ namespace CLI
                 service!.FindLocationsByCity(input, StringSearchMode.Starts, location =>
                 {
                     Console.WriteLine($"№{i++}:");
-                    Console.WriteLine(location.GetManaged());
+                    Console.WriteLine(location);
                     Console.WriteLine();
                     return i < count;
                 });
