@@ -138,7 +138,7 @@ namespace CLI
             byte[] s_city = new ASCIIEncoding().GetBytes(s1);
 
             sw.Restart();
-            Location.Managed foundLocation = default;
+            Location.Managed? foundLocation = default;
             service.FindLocationsByCity(s1, StringSearchMode.Exact, location =>
             {
                 foundLocation = location;
