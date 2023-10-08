@@ -1,16 +1,12 @@
-using GeoIp.Data;
-
 namespace GeoIp.Tests;
 
-public class Search
+public class Search : IClassFixture<DatabaseFixture>
 {
-    private readonly GeoIpDatabase dataBase;
+    private readonly DatabaseFixture databaseFixture;
 
-
-
-    public Search()
+    public Search(DatabaseFixture databaseFixture)
     {
-        dataBase = new GeoIpDatabase(File.ReadAllBytes("geobase.dat"));
+        this.databaseFixture = databaseFixture;
     }
 
     [Theory]
@@ -21,7 +17,8 @@ public class Search
     public void Search_by_city_name(string cityName, StringSearchMode searchMode, bool shouldBeFound)
     {
         int count = 0;
-        dataBase.FindLocationsByCity(cityName, StringSearchMode.Exact, location =>
+
+        databaseFixture.Database.FindLocationsByCity(cityName, searchMode, location =>
         {
             Assert.True(
                 searchMode switch
@@ -36,6 +33,16 @@ public class Search
         });
 
         Assert.True(!shouldBeFound || count > 0);
+    }
+}
 
+
+public class DatabaseFixture
+{
+    public GeoIpDatabase Database { get; set; }
+
+    public DatabaseFixture()
+    {
+        Database = new GeoIpDatabase(File.ReadAllBytes("geobase.dat"));
     }
 }
