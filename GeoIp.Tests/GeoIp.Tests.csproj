@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GeoIpBase\GeoIp.csproj" />
+    <ProjectReference Include="..\GeoIp\GeoIp.csproj" />
   </ItemGroup>
 
   <ItemGroup>
